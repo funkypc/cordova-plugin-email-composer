@@ -142,8 +142,8 @@ class Impl {
         String body       = fixLineBreaks(params.optString("body"));
         boolean isHTML    = params.optBoolean("isHtml");
         CharSequence text = isHTML ? Html.fromHtml(body) : body;
-
-        draft.putExtra(Intent.EXTRA_TEXT, text);
+        // Disable set body for WhatsApp compatibility
+        // draft.putExtra(Intent.EXTRA_TEXT, text.toString());
     }
 
     /**
